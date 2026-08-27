@@ -5,12 +5,15 @@
     <title>:(</title>
     <style>
         body{
-            background-color: rgb(0,100,255)
+            background-color: rgb(0,100,255);
+            user-select: none;
+            -moz-user-select: none;
         }
         *{
             color: white;
             font-weight: 400;
             white-space: nowrap;
+            cursor: none;
         }
         #text1{
             position: absolute;
@@ -64,6 +67,9 @@
     <p id="text4">有关此问题的详细信息和可能的解决方法，请访问：<br>https://windows.com/stopcode</p>
     <p id="text5">如果致电支持人员，请向他们提供以下信息：<br>错误代码：CRITICAL_PROCESS_DIED</p>
     <script>
+        document.addEventListener("contextmenu",(e) => {
+            e.preventDefault();
+        })
         let i = 0;
         function timer() {
             setTimeout(() => {
@@ -75,7 +81,7 @@
                 }
                 else {
                     setTimeout(() => {
-                        document.body.innerHTML = "<img src='./icon.png'>";
+                        document.body.innerHTML = "<img src='./icon.png' draggable='false'>";
                         document.body.style.backgroundColor = "black";
                         setTimeout(() => {
                             location.href="index.html";
