@@ -4,56 +4,51 @@
     <meta charset="UTF-8">
     <title>:(</title>
     <style>
-        body{
-            background-color: rgb(0,80,255);
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        body {
+            background-color: rgb(0, 80, 255);
             user-select: none;
             -moz-user-select: none;
+            padding: 60px 0 0 60px;
+            box-sizing: border-box;
         }
-        *{
+        * {
             color: white;
             font-weight: 400;
             white-space: nowrap;
+            margin: 0;
         }
-        #text1{
-            position: absolute;
-            top: 150px;
-            left: calc(50% - 350px);
-            transform: translate(-50%,-50%);
+        #text1 {
             font-size: 150px;
+            line-height: 1.1;
+            margin-bottom: 150px;
         }
-        #text2{
-            position: absolute;
-            top: 400px;
-            left: calc(50% - 68px);
-            transform: translate(-50%,-50%);
+        #text2 {
             font-size: 30px;
+            line-height: 1.5;
         }
-        #text3{
-            position: absolute;
-            top: 480px;
-            left: calc(50% - 315px);
-            transform: translate(-50%,-50%);
+        #text3 {
             font-size: 30px;
+            margin-top: 50px;
         }
-        #text4{
-            position: absolute;
-            top: 580px;
-            left: calc(50% - 95px);
-            transform: translate(-50%,-50%);
+        #text4 {
             font-size: 25px;
+            line-height: 1.5;
+            margin-top: 60px;
         }
-        #text5{
-            position: absolute;
-            top: 660px;
-            left: calc(50% + 15px);
-            transform: translate(-50%,-50%);
+        #text5 {
             font-size: 25px;
+            line-height: 1.5;
+            margin-top: 40px;
         }
-        img{
+        img {
             position: absolute;
             top: 30%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%, -50%);
             height: 250px;
             filter: brightness(1.5);
         }
@@ -66,7 +61,7 @@
     <p id="text4">有关此问题的详细信息和可能的解决方法，请访问：<br><a>https://windows.com/stopcode</a></p>
     <p id="text5">如果致电支持人员，请向他们提供以下信息：<br>错误代码：YOU_MAY_NOT_BE_ABLE_TO_WRITE_FRONT_END_CODE</p>
     <script>
-        document.addEventListener("contextmenu",(e) => {
+        document.addEventListener("contextmenu", (e) => {
             e.preventDefault();
         })
         let i = 0;
@@ -82,11 +77,11 @@
                         document.body.innerHTML = "<img src='./icon.png' draggable='false'>";
                         document.body.style.backgroundColor = "black";
                         setTimeout(() => {
-                            location.href="index.html";
-                        },4000)
-                    },1000)
+                            location.href = "index.html";
+                        }, 4000)
+                    }, 1000)
                 }
-            },100);
+            }, 100);
         }
         timer();
         document.querySelector("a").onclick = () => {
