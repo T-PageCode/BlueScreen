@@ -4,58 +4,51 @@
     <meta charset="UTF-8">
     <title>:(</title>
     <style>
-        body{
-            background-color: rgb(0,80,255);
+        html, body {
+            margin: 0;
+            height: 100%;
+        }
+        body {
+            background-color: #2067B2;
             user-select: none;
             -moz-user-select: none;
+            padding: 8vh 0 0 8vw;
+            box-sizing: border-box;
+            font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
         }
-        *{
+        * {
             color: white;
-            font-weight: 400;
+            font-weight: 300;
             white-space: nowrap;
+            margin: 0;
         }
-        #text1{
-            position: absolute;
-            top: 150px;
-            left: calc(50% - 350px);
-            transform: translate(-50%,-50%);
-            font-size: 150px;
+        #text1 {
+            font-size: 10vw;
+            line-height: 1;
+            margin-bottom: 8vh;
+            font-weight: 200;
         }
-        #text2{
-            position: absolute;
-            top: 400px;
-            left: calc(50% - 68px);
-            transform: translate(-50%,-50%);
-            font-size: 30px;
+        #text2 {
+            font-size: 1.8vw;
+            line-height: 1.4;
+            font-weight: 300;
         }
-        #text3{
-            position: absolute;
-            top: 480px;
-            left: calc(50% - 315px);
-            transform: translate(-50%,-50%);
-            font-size: 30px;
+        #text3 {
+            font-size: 1.8vw;
+            margin-top: 6vh;
+            font-weight: 300;
         }
-        #text4{
-            position: absolute;
-            top: 580px;
-            left: calc(50% - 95px);
-            transform: translate(-50%,-50%);
-            font-size: 25px;
+        #text4 {
+            font-size: 1.4vw;
+            line-height: 1.4;
+            margin-top: 8vh;
+            font-weight: 300;
         }
-        #text5{
-            position: absolute;
-            top: 660px;
-            left: calc(50% + 15px);
-            transform: translate(-50%,-50%);
-            font-size: 25px;
-        }
-        img{
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            height: 250px;
-            filter: brightness(1.5);
+        #text5 {
+            font-size: 1.4vw;
+            line-height: 1.4;
+            margin-top: 4vh;
+            font-weight: 300;
         }
     </style>
 </head>
@@ -66,7 +59,25 @@
     <p id="text4">有关此问题的详细信息和可能的解决方法，请访问：<br><a>https://windows.com/stopcode</a></p>
     <p id="text5">如果致电支持人员，请向他们提供以下信息：<br>错误代码：YOU_MAY_NOT_BE_ABLE_TO_WRITE_FRONT_END_CODE</p>
     <script>
-        document.addEventListener("contextmenu",(e) => {
+        function enterFullscreen() {
+            const el = document.documentElement;
+            const request = el.requestFullscreen || el.webkitRequestFullscreen || el.msRequestFullscreen;
+            if (request) {
+                const result = request.call(el);
+                if (result && result.catch) result.catch(() => {});
+            }
+        }
+        window.addEventListener("load", () => {
+            enterFullscreen();
+            const once = () => {
+                enterFullscreen();
+                document.removeEventListener("click", once);
+                document.removeEventListener("keydown", once);
+            };
+            document.addEventListener("click", once);
+            document.addEventListener("keydown", once);
+        });
+        document.addEventListener("contextmenu", (e) => {
             e.preventDefault();
         })
         let i = 0;
@@ -79,14 +90,14 @@
                 }
                 else {
                     setTimeout(() => {
-                        document.body.innerHTML = "<img src='./icon.png' draggable='false'>";
+                        document.body.innerHTML = "<img src='./icon.png' draggable='false' style='position:fixed;top:30%;left:50%;transform:translate(-50%,-50%);height:250px;filter:brightness(1.5);'>";
                         document.body.style.backgroundColor = "black";
                         setTimeout(() => {
-                            location.href="index.html";
-                        },4000)
-                    },1000)
+                            location.href = "index.html";
+                        }, 4000)
+                    }, 1000)
                 }
-            },100);
+            }, 100);
         }
         timer();
         document.querySelector("a").onclick = () => {
