@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+}
+::selection {
+    background-color: rgb(0, 0, 255, 0.2);
+}
+h1 {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: -33px;
+    font-size: 140px;
+    white-space: nowrap;
+}
+#select-color {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.4);
+    border-radius: 20px;
+    width: 300px;
+    text-align: center;
+    height: 120px;
+}
+#select-color p {
+    margin-top: 5px;
+    margin-bottom: -10px;
+    font-size: 20px;
+}
+input {
+    background-color: white;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.4);
+    border-radius: 20px;
+    width: 150px;
+    height: 60px;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+input:hover {
+    background-color: rgb(230, 230, 230);
+}
+input::-webkit-color-swatch {
+    border: none;
+    border-radius: 15px;
+}
+#font1 { 
+    font-family: Georgia, "Simsun", serif;
+    color: red;
+}
+#font2 { 
+    font-family: "Simsun", "宋体", serif; 
+    color: blue;
+}
+#font3 { 
+    font-family: "Lucida Console", sans-serif; 
+    color: blueviolet;
+}
+#font4 { 
+    font-family: "Ubuntu Mono", sans-serif; 
+    color: yellowgreen;
+}
+#font5 { 
+    font-family: "JetBrains Mono", sans-serif; 
+    color: green;
+}
+#font6 { 
+    font-family: "Consolas", sans-serif; 
+    color: pink;
+}
+#font7 { 
+    font-family: "Courier New", serif; 
+    color: darkblue;
+}
+#font8 { 
+    font-family: "Simsun", sans-serif; 
+    color: aqua;
+}
+#font9 { 
+    font-family: Georgia, sans-serif; 
+    color: brown;
+}
+#font10 { 
+    font-family: Arial, sans-serif; 
+    color: orange;
+}
+#start {
+    position: absolute;
+    top: 420px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 40px;
+    color: white;
+    background-color: rgb(0, 80, 255);
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+#start:hover {
+   background-color: rgb(0, 40, 255); 
+}
