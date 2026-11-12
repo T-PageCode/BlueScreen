@@ -109,3 +109,13 @@ input::-webkit-color-swatch {
 #start:hover {
    background-color: rgb(0, 40, 255); 
 }
+#warning {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: yellow;
+    border: 2px solid orange;
+    padding: 10px;
+    border-radius: 20px;
+}
