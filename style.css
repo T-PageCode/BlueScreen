@@ -104,10 +104,14 @@ input::-webkit-color-swatch {
     border: none;
     font-size: 20px;
     box-shadow: 0 0 20px rgb(0, 0, 0, 0.3);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease,
+    filter 0.3s ease;
 }
 #start:hover {
    background-color: rgb(0, 40, 255); 
+}
+#start:active {
+    filter: contrast(50%);
 }
 #warning {
     position: absolute;
