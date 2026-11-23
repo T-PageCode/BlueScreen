@@ -13,7 +13,7 @@ h1 {
     font-size: 140px;
     white-space: nowrap;
 }
-#select-color {
+#select-color-and-text {
     position: absolute;
     top: 300px;
     left: 50%;
@@ -23,9 +23,9 @@ h1 {
     border-radius: 20px;
     width: 300px;
     text-align: center;
-    height: 120px;
+    height: 220px;
 }
-#select-color p {
+#select-color-and-text p {
     margin-top: 5px;
     margin-bottom: -10px;
     font-size: 20px;
@@ -93,7 +93,7 @@ input::-webkit-color-swatch {
 }
 #start {
     position: absolute;
-    top: 420px;
+    top: 480px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 150px;

@@ -18,16 +18,22 @@
         <span id="font9">e</span>
         <span id="font10">n</span>
     </h1>
-    <div id="select-color">
+    <div id="select-color-and-text">
         <p>请选择蓝屏颜色</p>
-        <input type="color" value="#0050ff">
+        <input type="color" value="#0050ff" id="bg-color">
+        <p>请选择文字颜色</p>
+        <input type="color" value="#ffffff" id="text-color">
     </div>
     <button id="start">开始</button>
     <div id="warning">建议您使用 Chromium 内核的浏览器访问。使用其他内核的浏览器可能存在兼容性问题。</div>
     <script>
         localStorage.setItem("bluescreen-color", "#0050ff");
-        document.addEventListener("input", () => {
-            localStorage.setItem("bluescreen-color", document.querySelector("input").value);
+        localStorage.setItem("bluescreen-text-color", "#ffffff");
+        document.getElementById("bg-color").addEventListener("input", () => {
+            localStorage.setItem("bluescreen-color", document.getElementById("bg-color").value);
+        })
+        document.getElementById("text-color").addEventListener("input", () => {
+            localStorage.setItem("bluescreen-text-color", document.getElementById("text-color").value);
         })
         document.getElementById("start").onclick = () => {
             window.location.href = "/screen.html";
